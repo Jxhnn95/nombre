@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de conversión a funciones en JavaScript</title>
+  <link rel="stylesheet" href="../../javascript/javascript.component.css" />
+
+</head>
+
+<body>
+  <h1>Ejercicios de conversión a funciones en JavaScript</h1>
+
+  <p>Tenemos que convertir cada bloque de código no reutilizable en una función reutilizable, con parámetros cuando
+    sea posible console log</p>
+
+    <ol>
+      <li>
+        <h2>Sumar dos números <small>(resuelto)</small></h2>
+
+        <pre><code>
+    // Código no reutilizable
+    let num1 = 5;
+    let num2 = 10;
+
+    let suma = num1 + num2;
+
+    console.log(suma); // Debería imprimir 15
+
+    // Convertir en una función
+    funcion sumar(num1, num2) {
+      return num1 + num2;
+    }
+
+    // Llamada a la función
+    let sumaFuncion = sumar(num1, num2);
+
+    console.log(sumaFuncion); // Debería imprimir 15, como antes
+
+    // Llamada a la función con otros argumentos
+    let otroResultado = sumar(20, 32);
+
+    console.log(otroResultado); // Debería imprimir 52
+    </code></pre>
+      </li>
+
+      <li>
+        <h2>Calcular el área de un triángulo</h2>
+
+        <pre><code>
+    // Código no reutilizable
+    let base = 5;
+    let altura = 8;
+
+    let area = (base * altura) / 2;
+
+    console.log(area); // Debería imprimir 20
+
+    // Convertir en una función
+
+    funcion multiplicacion(base , altura){
+    return base * altura ;   }
+
+    // Llamada a la función
+
+    console.log(multiplicacion(base,altura));
+
+    // Llamada a la función con otros argumentos
+
+    console.log(multiplicacion(15, 5));
+
+    </code></pre>
+      </li>
+
+      <li>
+        <h2>Verificar si un número es par</h2>
+
+        <pre><code>
+    // Código no reutilizable
+    let numero = 4;
+
+    let esPar = numero % 2 === 0;
+
+    console.log(esPar); // Debería imprimir true
+
+    // Convertir en una función
+
+    funcion esPar(numero){
+      return numero;
+    }
+
+
+    // Llamada a la función
+
+    if (esPar==0){
+      document.write(`<p>${numero} es PAR</p>`);
+    } else {
+      document.write(`<p>${numero} es IMPAR</p>`);
+    }
+
+
+    // Llamada a la función con otros argumentos
+
+    if (esPar==0){
+      document.write(`<p>${7} es PAR</p>`);
+    } else {
+      document.write(`<p>${7} es IMPAR</p>`);
+    }
+
+
+    </code></pre>
+      </li>
+
+      <li>
+        <h2>Convertir Celsius a Fahrenheit</h2>
+
+        <pre><code>
+    // Código no reutilizable
+    let temperaturaEnCelsius = 25;
+
+    let temperaturaEnFahrenheit = (temperaturaEnCelsius * 9) / 5 + 32;
+
+    console.log(temperaturaEnFahrenheit); // Debería imprimir 77
+
+    // Convertir en una función
+    funcion temperaturaEnCelsius =25
+    // Llamada a la función
+    console.log({temperaturaEnCelsius });
+    funcion temperaturaEnFahrenheit=temperaturaEnCelsius.toString ();
+    console.log({temperaturaEnFahrenheit});
+    funcion temperaturaEnFahrenheit=temperaturaEnFahrenheit(temperaturaEnCelsius);
+    console.log({ temperaturaEnFahrenheit});
+
+    // Llamada a la función con otros argumentos
+    console.log ({ temperaturaEnFahrenheit(30)});
+
+    </code></pre>
+      </li>
+
+      <li>
+        <h2>Generar un número aleatorio entre dos números</h2>
+
+        <pre><code>
+    // Código no reutilizable para aleatorio entre 2 y 10
+    let numeroAleatorio = Math.floor(Math.random() * (10 - 2 + 1) ) + 2;
+
+    console.log(numeroAleatorio); // Debería imprimir un número aleatorio entre 2 y 10
+
+    // Convertir en una función
+    funcion numeroAleatorio1 =Math.floor(Math.random()*(2-2+8))* 1;
+
+
+    // Llamada a la función
+    console.log(numeroAleatorio1);
+
+    // Llamada a la función con otros argumentos
+    console.log(numeroAleatorio1(2));
+       </code></pre>
+      </li>
+    </ol>
+  <script src="funciones.js"></script>
+</body>
+</html>

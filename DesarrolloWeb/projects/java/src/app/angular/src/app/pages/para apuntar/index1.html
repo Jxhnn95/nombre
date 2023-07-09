@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="shortcut icon" href="/PresentacionCurso/src/app/paginas/html/Imagenes/LetterJ.png">
+  <link rel="stylesheet" href="/src/app/pages/para apuntar/style1.css">
+  <title>HTML & CSS</title>
+
+  <!-- añadimos el script de Bootstrap para que funcionen componentes como acordeón, slider... -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<!-- en el body se encuentra la parte visible del documento, lo que verá el usuario -->
+
+<body>
+  <header>
+    <div class="header__superior">
+      <div class="logo">
+        <img src="/PresentacionCurso/src/app/paginas/html/Imagenes/LetterJ.png" alt="">
+      </div>
+      <h2>HTML && CSS </h2>
+
+    </div>
+    <div class="container__menu">
+      <div class="menu">
+        <input type="checkbox" id="check__menu">
+        <label id="#label__check" for="check__menu">
+          <i class="fas fa-bars icon__menu"></i>
+        </label>
+
+        <nav>
+          <ul>
+            <li><a href="#" id="selected"></a></li>
+            <li><a href="/PresentacionCurso/src/app/inicio/inicio.component.html"></a></li>
+            <li><a href="../paginas.component.html">Páginas</a>
+              <ul>
+                <li><a href="../html/html.component.html"> Html Css</a></li>
+                <li><a href="../javascript/">Js</a></li>
+              </ul>
+            </li>
+
+            <li><a href="../paginas.component.html">Mas Páginas</a>
+              <ul>
+                <li><a href="../angular/angular.component.html">Angular</a></li>
+                <li><a href="../node/node.component.html">node</a></li>
+                <li><a href="../java/java.component.html">Java</a></li>
+              </ul>
+            </li>
+            <!-- ejemplo de enlace a externo -->
+            <li><a href="https://github.com/Jxhnn95">Mi github</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- para definir la estructura o "layout" de nuestra página podemos usar grid -->
+  <!-- en este caso aplicamos grid a una clase que hemos llamado grid-container, que envuelve nuestro layout -->
+  <div class="grid-container">
+    <!-- como puede haber varios header en un documento, le añadimos una clase personalizada,
+        así podemos seleccionarlo para darle estilo de forma más precisa -->
+
+    <!-- la etiqueta <main> suele contener el contenido principal de la página (una noticia, la lista de productos...) -->
+    <main>
+      <h2> Contenido principal de la página </h2>
+      <p class="text-success">Párrafo de ejemplo </p>
+      <!-- podemos añadir directamente las clases de Boostrap, como text-{color} a nuestro HTML -->
+      <!-- conservamos nuestra clase gallery, pero le quitamos los estilos de grid -->
+<br><br>
+      <!-- con grid también podemos crear galerías de elementos (imágenes, otros divs, articles o cualquier etiqueta HTML realmente) -->
+      <!-- en la clase .gallery definimos un grid responsive -->
+
+      <section class="gallery">
+
+        <img src="/PresentacionCurso/src/app/paginas/html/Imagenes/Nacimiento1.png" alt="Nacimiento Pollito" />
+        <img src="/PresentacionCurso/src/app/paginas/html/Imagenes/Nacimiento2.png" alt="Nacimiento Pollito" />
+        <img src="/PresentacionCurso/src/app/paginas/html/Imagenes/Nacimiento3.png" alt="Nacimiento Pollito" />
+        <img src="/PresentacionCurso/src/app/paginas/html/Imagenes/Nacimiento4.png" alt="Nacimiento Pollito" />
+        <img src="/PresentacionCurso/src/app/paginas/html/Imagenes/Nacimiento5.png" alt="Nacimiento Pollito" />
+        <img
+          src="https://img.freepik.com/vector-premium/eclosion-pollo-huevo-pollo-agrietado-huevos-eclosion-pollitos-pascua-eclosionados_102902-1124.jpg?w=996"
+          alt="LINK" />
+      </section><br><br>
+
+
+
+
+
+      <section>
+        <article>
+          <h2>Partes de HTML</h2>
+          <details>
+            <summary>Foto de estructura de página web</summary>
+            <img src="https://keepcoding.io/wp-content/uploads/2022/05/Secciones-de-una-pagina-web-en-html.jpg"
+              alt="estructura pagina web" />
+
+          </details>
+        </article>
+      </section>
+      <br><br>
+
+
+
+      <section>
+        <article>
+          <h2>Pasos Git</h2>
+          <details>
+            <summary>Abrir</summary><br><br>
+            <div>
+
+
+              1.Configuración Inicial "CMD": <br><br>
+              <details>
+                <summary>Empezar</summary>
+
+                git config --global user.name "tu_nombre" // Configura el nombre que se asociará con tus commits. <br>
+                git config --global user.email "tu_email" // Configura el correo electrónico que se asociará con tus
+                commits.<br><br>
+
+
+              </details><br>
+              2 Para crear o clonar: <br><br>
+
+              <details>
+                <summary>crear o clonar</summary>
+                -Crear en https://github.com/ un nuevo repositorio y luego ir a CMD <br>
+
+                -Inicio de un Repositorio Git "CMD" <br>
+
+                abrir CMD o entrar en la carpeta donde esta el proyecto para abrir cmd desde esa direccion
+
+                git init // Inicia un nuevo repositorio git en tu directorio actual. <br>
+                git clone [url] // Copia un repositorio git existente de la URL proporcionada. <br>
+
+                copiar codigos de https://github.com/ <br>
+                ejemplo: <br>
+                echo "# nombre" >> README.md <br>
+                git add README.md <br>
+                git commit -m "first commit"<br>
+                git branch -M main<br>
+                git remote add origin https://github.com/Jxhnn95/nombre.git<br>
+                git push -u origin main<br>
+                y en visual sc abrir desde la carpeta creada del proyecto <br><br>
+
+              </details><br>
+
+              3 Para agregar y guardar cambios del proyecto en Git: <br><br>
+              <details>
+                <summary>Agregar y guardar</summary>
+                * Guardar edicion de visual SC <br>
+                * en el CMD: <br>
+                -git status (verificar el estado de proyecto git) <br>
+                -git add . (punto "." significa cualquier archivo) <br>
+                git status // Muestra el estado de los archivos (sin seguimiento, modificados, preparados para commit).
+                <br>
+                -
+                -git commint -m "texto de cambio orientativo" <br>
+                -git push <br>
+
+                Historial de Commits <br>
+                git log // Muestra el historial de commits. <br>
+                git log --oneline // Muestra el historial de commits en formato resumido. <br><br>
+              </details><br>
+
+              4 Otros comando: <br><br>
+              <details>
+                <summary>otro comandos</summary><br>
+                Ramas (Branches)<br>
+                git branch // Lista todas las ramas en tu repositorio.<br>
+                git branch [nombre_de_la_rama] // Crea una nueva rama.<br>
+                git switch [nombre_de_la_rama] // Cambia a la rama especificada.<br>
+                git switch -c [nombre_de_la_rama] // Crea una nueva rama y cambia a ella.<br>
+                git merge [nombre_de_la_rama] // Combina la rama especificada con la rama actual.<br>
+
+
+                Interactuar con Remoto<br>
+                git remote add origin [url] // Conecta tu repositorio local a un servidor remoto.<br>
+                git remote set-url origin [https://github.com/username/repodeejemplo.git] // actualiza el origin de tu
+                repositorio local<br>
+                git push -u origin [nombre_de_la_rama] // Sube tus commits a la rama remota.<br>
+                git pull // Actualiza tu repositorio local con el más reciente commit del repositorio remoto.<br>
+                git fetch // Obtiene todos los cambios del repositorio remoto, pero no los aplica a tu trabajo
+                actual.<br>
+
+              </details><br>
+            </div>
+          </details>
+        </article>
+      </section><br><br>
+
+
+
+      <section>
+        <article>
+          <h2>figma</h2>
+          <details>
+            <summary>Analizar partes de proyecto</summary>
+            <p>
+              https://www.figma.com/file/TLk7iaPCMkhd9ik2TOgsSr/DLG-(Descifrando-La-Guerra)?type=design&node-id=0-1&t=euYtz5971wesEOKg-0
+
+              Para ver todas las opciones hay que registrarse en Figma.
+            </p>
+          </details>
+        </article>
+      </section>
+
+      <section>
+        <article>
+          <h2>Css</h2>
+          <details>
+            <summary>Css</summary>
+
+            <summary>Foto de regla Css</summary>
+            <img src="https://www.swotster.com/swotster/Spanish/DreamweaverCS3/images/images_les_020/les20_image002_es.jpg
+          " alt="Regla Css" /> <br>
+
+
+            Se encarga de dar estilo a cada pagina web <br>
+            Color de: Fondo,barra,cuerpo, letra.. <br>
+            Tipo de letra: de todo o cada enunciado <br>
+            Tamaños: de grinds, letras ,bordes..<br>
+            crear o agrupar estilos con medidas, etc...
+          </details>
+        </article>
+      </section>
+    </main>
+
+    <!-- aside suele usarse para contener elementos que flotan alrededor del contenido principal -->
+    <!-- como puede haber varias, le añadimos una clase -->
+    <aside class="sidebar">
+      <!-- article suele utilizarse para elementos que tienen su propia "entidad", por ejemplo, la ficha de una película, un producto, un artículo de blog.
+            no tiene sentido para una imagen decorativa o un párrafo suelto, en este caso entendemos que el párrafo acompañaría a la imagen como un mismo "anuncio" -->
+      <article>
+        <p>Barra lateral</p>
+        <!--
+                  es buena prácticadar un tamaño en línea (como excepción) a las imágenes,
+                para evitar que la interfaz se mueva demasiado para el usuario conforme carga el contenido
+                de esta forma se "reserva el espacio" -->
+        <!-- IMPORTARNTE: luego hay que darle el tamaño o proporción que realmente nos interesa con CSS -->
+        <img class="sidebar-image" width="50" height="40"
+          src="/PresentacionCurso/src/app/paginas/html/Imagenes/LetterJ3.png" alt="icono" />
+      </article>
+    </aside>
+    <!-- puede haber más de un footer -->
+    <footer class="main-footer">
+      <!-- aquí también podemos utilizar nav, ya que sería otro menú de navegación -->
+      <nav class="footer">
+        <ul>
+          <li><a href="/README.md">Privacidad</a></li>
+          <li><a href="/README.md">Cookies</a></li>
+          <li><a href="/README.md">Aviso Legal</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+</body>
+
+</html>

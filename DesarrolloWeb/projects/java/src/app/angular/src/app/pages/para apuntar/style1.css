@@ -1,0 +1,435 @@
+/* el asterisco (*) representa cualquier etiqueta del dcumento */
+*{
+  /*del menu desplegable*/
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+  text-decoration: none;
+
+}
+
+header{
+  width: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background:antiquewhite;
+}
+
+
+.header__superior{
+  max-width:1200px;
+  margin: auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:5px;
+}
+
+
+.logo img{
+  width:40px;
+
+
+}
+
+/*barra menu*/
+
+.container__menu{
+  width: 100%;
+  height:65px;
+  background:rgb(155, 138, 116);
+  padding:0px 20px;
+  }
+
+.menu{
+    max-width: 1200px;
+    margin:auto;
+    height:100%;
+  }
+
+
+  nav{
+     height: 100% ;
+  }
+
+  nav > ul{
+    height: 100%;
+    display:flex;
+  }
+
+  nav  ul  li {
+
+  height: 100%;
+  list-style:none;
+  position:relative;
+}
+
+menu> nav > ul > li:first-child > a {
+  background-image: url(/PresentacionCurso/src/app/paginas/html/Imagenes/inicio.png) ;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding:20px 40px;
+  place-items: top;
+}
+
+menu > nav > ul > li:first-child:hover > a {
+  background-image: url(/PresentacionCurso/src/app/paginas/html/Imagenes/inicio.png) ;
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding:20px 40px;
+  place-items: top;
+
+}
+
+nav> ul> li> a {
+
+  width: 100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  padding:20px;
+  color:#ffffff;
+  transition: all 300ms ease;
+}
+
+nav > ul > li > a:hover {
+  transform:scale(1.1);
+  background:rgb(202, 176, 141);
+  box-shadow:0px 0px 10px 0px rgb(#000000cb);
+}
+#selected{
+  transform:scale(1.1);
+  background-color:#bfb395cb;
+  box-shadow:0px 0px 10px 0px black;
+}
+/*sub-menu*/
+nav ul li ul {
+  width: 200px;
+  display:flex;
+  flex-direction: column;
+  background:white;
+  position:absolute;
+  top:90px;
+  left:-5px;
+  padding:14px 0px;
+  visibility:hidden;
+  opacity:0;
+  box-shadow: 0px 0px 10px 0px black;
+  z-index:10;
+
+}
+
+nav ul li:hover ul{
+  visibility:visible;
+  opacity:1;
+  top: 70px;
+
+}
+
+nav ul li ul:before{
+  content:'';
+  width:0;
+  height:0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid white;
+  position:absolute;
+  top:-12px;
+  left:20px;
+
+}
+
+nav ul li ul li a{
+  display:block;
+  color:gray;/*color letras de desplegable*/
+  padding:6px;
+  padding-left: 14px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  transition:all 300ms ease;
+}
+
+nav ul li ul li a:hover{
+  background:rgb(138, 101, 48); /*fondo de desplegable*/
+  color:rgb(255, 255, 255);
+  transform: scale(1.1);
+  padding-left: 30px;
+  font-size:14px;
+  box-shadow:0px 0px 10px 0px rbga(0.0.0.0.5);
+}
+
+
+
+
+
+
+
+
+body {
+  /* si indicamos el tamaño de fuente en el body, se hereda en el resto del contenido */
+  font-size: 18px;
+  /* es importante que el último valor para el tipo de fuente sea muy genérico,
+  para asegurarnos de tener un mínimo de control de cómo se verá la letra,
+  aunque nuestras tipografías fallen */
+  font-family: Verdana, sans-serif;
+
+
+}
+
+
+main {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area: main;
+  min-height: 600px;
+  padding: right 18px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+
+      "main sidebar"
+      "footer footer";
+  /* si definimos un ancho máximo y añadimos margin: auto, centraremos el contenedor horizontalmente */
+  max-width: 80% 20%;
+  margin: 140px;
+  padding: 18px;
+}
+
+
+
+.main-footer {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area:footer;
+}
+
+/* podemosun elemento dentro de otro indicando los selectores de ambos separados con un espacio
+también podemos aplicar los mismos estilos a varios selectores, separándolos con comas (,)
+en este caso aplicamos los mismos estilos base al menú principal y el del footer */
+
+.main-footer ul li {
+  /* con flex, distribuimos el contenido en horizontal (por defecto, se puede cambiar) */
+  display: flex;
+  /* espaciado entre elementos */
+  gap: 18px;
+  /* quitamos el punteado que añade el navegador a las listas */
+  list-style: none;
+  /* quitamos el espaciado a la izquierda que añade el navegador a las listas */
+  padding-left: 0;
+}
+
+/* para centrar horizontalmente los elementos de un contenedor flex utilizamos justify-content */
+.main-footer ul li {
+  justify-content: center;
+}
+
+
+.main-footer a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  /* así (con var) utilizamos el valor que hemos definido previamente */
+  color: var(--color-text);
+}
+
+
+
+/* en font-size también podemos utilizar palabras reservadas como "small" */
+.main-footer a {
+  font-size: small;
+}
+
+
+.sidebar {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area: sidebar;
+  border-left: 2px solid #ccc;
+  /* el padding es el espaciado de borde para adentro de un elemento */
+  padding: 18px;
+  /* el margin es el espaciado de borde para afuera de un elemento */
+  /* margin: 18px; */
+}
+
+.main-footer {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area: footer;
+}
+
+.heading {
+  text-align: center;
+  /* sombra de texto */
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* ajustamos la imagen al contenedor */
+.sidebar-image {
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  display: grid;
+  /* cuando no sabemos cuántos elementos habrá en el contenido */
+  grid-auto-rows: auto;
+  /* las columnas serán una repetición "repeat()" hasta llenar todo el espacio con los elementos que contenga el grid */
+  /* cada elemento será de mínimo 200px y máximo una fracción del contenido (es decir, lo que puede ocupar a partir de ahí) */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* espaciado entre elementos del grid */
+  gap: 10px;
+}
+
+.gallery img {
+  /* el máximo de ancho y altura proporcional */
+  width: 100%;
+  height: auto;
+  /* radio (esquinas redondeadas) del borde */
+  border-radius: 10px;
+  /* sobra de caja compatible con varios navegadores */
+  -webkit-box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.75);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ELEMENTOS RESPONSIVOS*/
+.icon__menu{
+  font-size: 26px;
+  color:white;
+  cursor:pointer;
+  width:26px;
+  height:100%;
+  display:none;
+  align-items:center;
+
+}
+#label__check{
+  width:26px;
+  height:100%;
+  display:none;
+
+
+}
+#check__menu{
+  display:none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* usamos mediqueries para modificar estilos según el tamaño de pantalla
+en este caso aplicaremos otros estilos cuando la pantalla sea más pequeña que la de un iPad mini (768px) */
+
+@media screen and(max-width: 720px){
+  .header__superior{
+    padding:10px;
+  }
+  .logo{
+    width:20px;
+  }
+  nav>ul{
+    flex-direction:column;
+    position:flex;
+    left:0;
+    top: 150px;
+    width:100%;
+    height: 0px;
+    transition: all 300ms ease;
+    z-index:100;
+    opacity:0;
+    visibility:hidden;
+  }
+  nav>ul>li>a:hover{
+    transform:scale(1);
+
+  }
+  nav> ul> li> ul{
+    left:50px;
+     }
+     nav>ul>li:first-child a{
+      background-position:20px;
+     }
+     #selected{
+      transform:scale(1);
+     }
+     #label__check{
+      display:block;
+     }
+     .icon__menu{
+      display:flex;
+     }
+     #chack__menu:checked ~ nav > ul{
+      height:300px;
+      visibility:visible;
+      opacity:1;
+     }
+     /* solo hace falta añadir los estilos a modificar */
+  .grid-container {
+    /* ahora el grid solo es de una columna */
+    grid-template-columns: 100%;
+    grid-template-areas:
+
+    "main"
+    "sidebar"
+    "footer";
+}
+
+
+}
+
+/* le quitamos el borde y el espaciado al sidebar */
+.sidebar {
+    border-left: none;
+    padding: 0;
+}
+
+/* quitamos la altura mínima del main */
+main {
+    min-height: auto;
+}

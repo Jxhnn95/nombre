@@ -1,0 +1,169 @@
+ de css
+body {
+  /* si indicamos el tamaño de fuente en el body, se hereda en el resto del contenido */
+  font-size: 18px;
+  /* es importante que el último valor para el tipo de fuente sea muy genérico,
+  para asegurarnos de tener un mínimo de control de cómo se verá la letra,
+  aunque nuestras tipografías fallen */
+  font-family: Verdana, sans-serif;
+
+
+}
+
+
+main {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area: main;
+  min-height: 600px;
+  padding-right: 18px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+  "main"
+
+      "main sidebar"
+      "footer footer";
+  /* si definimos un ancho máximo y añadimos margin: auto, centraremos el contenedor horizontalmente */
+  max-width: 960px;
+  margin: auto;
+  padding: 18px;
+}
+
+
+/* podemosun elemento dentro de otro indicando los selectores de ambos separados con un espacio
+también podemos aplicar los mismos estilos a varios selectores, separándolos con comas (,)
+en este caso aplicamos los mismos estilos base al menú principal y el del footer */
+
+.main-footer ul li {
+  /* con flex, distribuimos el contenido en horizontal (por defecto, se puede cambiar) */
+  display: flex;
+  /* espaciado entre elementos */
+  gap: 18px;
+  /* quitamos el punteado que añade el navegador a las listas */
+  list-style: none;
+  /* quitamos el espaciado a la izquierda que añade el navegador a las listas */
+  padding-left: 0;
+}
+
+/* para centrar horizontalmente los elementos de un contenedor flex utilizamos justify-content */
+.main-footer ul li {
+  justify-content: center;
+}
+
+
+.main-footer a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  /* así (con var) utilizamos el valor que hemos definido previamente */
+  color: var(--color-text);
+}
+
+/* en font-size también podemos utilizar palabras reservadas como "small" */
+.main-footer a {
+  font-size: small;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area: sidebar;
+  border-left: 2px solid #ccc;
+  /* el padding es el espaciado de borde para adentro de un elemento */
+  padding: 18px;
+  /* el margin es el espaciado de borde para afuera de un elemento */
+  /* margin: 18px; */
+}
+
+.main-footer {
+  /* ver grid-template-areas en .grid-container */
+  /* definimos dónde se verá en nuestra template con grid */
+  grid-area: footer;
+}
+
+.heading {
+  text-align: center;
+  /* sombra de texto */
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* ajustamos la imagen al contenedor */
+.sidebar-image {
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  display: grid;
+  /* cuando no sabemos cuántos elementos habrá en el contenido */
+  grid-auto-rows: auto;
+  /* las columnas serán una repetición "repeat()" hasta llenar todo el espacio con los elementos que contenga el grid */
+  /* cada elemento será de mínimo 200px y máximo una fracción del contenido (es decir, lo que puede ocupar a partir de ahí) */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* espaciado entre elementos del grid */
+  gap: 10px;
+}
+
+.gallery img {
+  /* el máximo de ancho y altura proporcional */
+  width: 100%;
+  height: auto;
+  /* radio (esquinas redondeadas) del borde */
+  border-radius: 10px;
+  /* sobra de caja compatible con varios navegadores */
+  -webkit-box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.75);
+}
+
+/* usamos mediqueries para modificar estilos según el tamaño de pantalla
+en este caso aplicaremos otros estilos cuando la pantalla sea más pequeña que la de un iPad mini (768px) */
+@media (max-width: 767px) {
+  /* solo hace falta añadir los estilos a modificar */
+  .grid-container {
+      /* ahora el grid solo es de una columna */
+      grid-template-columns: 100%;
+      grid-template-areas:
+
+      "header"
+      "nav"
+      "main"
+      "sidebar"
+      "footer";
+  }
+
+  /* el menú principal es vertical */
+  nav ul {
+      flex-direction:column;
+
+  }
+
+  /* le quitamos el borde y el espaciado al sidebar */
+  .sidebar {
+      border-left: none;
+      padding: 0;
+  }
+
+  /* quitamos la altura mínima del main */
+  main {
+      min-height: auto;
+  }
+  }
+
+*/
